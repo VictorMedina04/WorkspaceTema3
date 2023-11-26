@@ -62,9 +62,9 @@ public class Maquina {
 		return cambio;
 	}
 	//Saldo total del dia
-	public void calcularSaldoDiario(double suma) {
+	public void calcularSaldoDiario(double dineroIngresado) {
 
-		saldoDiario += suma;
+		saldoDiario += dineroIngresado;
 	}
 	public void mostrarSaldoDiario() {
 		System.out.println(saldoDiario+"€");

@@ -13,10 +13,9 @@ public class Principal {
 		double dineroIngresado;
 		int opcion, opcion2;
 		String contraseya;
-		Maquina m1, mSumar;
+		Maquina m1;
 		
 		m1 = new Maquina();
-		mSumar = new Maquina();
 		ticket = new Ticket(precioUnitario, fecha);
 		
 		
@@ -56,7 +55,7 @@ public class Principal {
 					}
 					break;
 				case 2:
-					//contraseña
+					
 					System.out.println("Introduzca la contraseña para iniciar sesión");
 					contraseya = Leer.dato();
 					
