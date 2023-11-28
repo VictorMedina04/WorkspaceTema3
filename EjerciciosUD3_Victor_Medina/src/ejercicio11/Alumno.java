@@ -1,5 +1,7 @@
 package ejercicio11;
 
+import java.util.Arrays;
+
 public class Alumno {
 
 	private String nombre;
@@ -59,5 +61,12 @@ public class Alumno {
 
 	public void setNotaMedia(double notaMedia) {
 		this.notaMedia = notaMedia;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "Alumno [nombre=" + nombre + ", curso=" + curso + ", notas=" + Arrays.toString(notas)
+				+ ", numeroSuspensos=" + numeroSuspensos + ", notaMedia=" + notaMedia + "]";
+	}
+	
 }
