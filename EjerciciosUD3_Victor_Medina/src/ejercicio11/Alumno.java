@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Alumno {
 
 	private String nombre;
-	private String curso;
 	private double [] notas;
 	private int numeroSuspensos;
 	private double notaMedia;
@@ -14,10 +13,9 @@ public class Alumno {
 		
 	}
 
-	public Alumno(String nombre, String curso, double[] notas, int numeroSuspensos, double notaMedia) {
+	public Alumno(String nombre, double[] notas, int numeroSuspensos, double notaMedia) {
 		
 		this.nombre = nombre;
-		this.curso = curso;
 		this.notas = notas;
 		this.numeroSuspensos = numeroSuspensos;
 		this.notaMedia = notaMedia;
@@ -29,14 +27,6 @@ public class Alumno {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getCurso() {
-		return curso;
-	}
-
-	public void setCurso(String curso) {
-		this.curso = curso;
 	}
 
 	public double[] getNotas() {
@@ -65,7 +55,7 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", curso=" + curso + ", notas=" + Arrays.toString(notas)
+		return "Alumno [nombre=" + nombre +", notas=" + Arrays.toString(notas)
 				+ ", numeroSuspensos=" + numeroSuspensos + ", notaMedia=" + notaMedia + "]";
 	}
 	
