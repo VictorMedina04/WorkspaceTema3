@@ -76,4 +76,11 @@ public class Producto {
 		precioCoste = precioFabrica + (precioFabrica*costeTransporte/cien);
 		return precioCoste;
 	}
+	public double calcularPVP(double porcentajePVP) {
+		double PVP = 0;
+		int cien = 100;
+
+		PVP = precioCoste+(precioCoste*porcentajePVP/cien);
+		return PVP;
+	}
 }

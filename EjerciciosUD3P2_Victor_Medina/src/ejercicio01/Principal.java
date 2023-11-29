@@ -6,9 +6,9 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		int opcion, uno = 1;
+		int opcion, uno = 1, tam;
 		Producto p = new Producto();
-		Tienda t = new Tienda();
+		Tienda t;
 		double precioFabrica, precioCoste = 0, costeTransporte;
 		int elegirFragil;
 		boolean fragil = false;
@@ -31,16 +31,18 @@ public class Principal {
 		precios de venta al público menos la suma de todos los precios de fábrica.
 		Crear un main de prueba con un menú donde se pueda hacer todo esto.
 		*/
-				
+		System.out.println("Cuantos productos tiene");
+		tam = Leer.datoInt();
+		lista = new Producto[tam];
+		t = new Tienda(lista, 0);
 		do {
 			System.out.println("""
 					1-Añadir producto
 					2-Listar todos los productos
 					3-Comprobar fragilidad
-					4-Precio coste
-					5-suma precio fabrica
-					6-pvp
-					7-ganancias
+					4-Cantidad invertida
+					5-PVP
+					6-Ganancias
 					""");
 			opcion = Leer.datoInt();
 			switch(opcion) {
@@ -62,7 +64,7 @@ public class Principal {
 					costeTransporte = Leer.datoDouble();
 					p.calcularPrecioCoste(costeTransporte);
 					p = new Producto(precioFabrica, fragil, codigo, nombreProducto, precioCoste);
-					t = new Tienda(lista[p]);
+					t.addProducto(p);
 					break;
 				case 2:
 					t.imprimirTodosLosProductos();
@@ -71,8 +73,11 @@ public class Principal {
 					t.comprobarFragilidad(p);
 					t.mostrarFragilidad(p);
 					break;
-					
-					
+				case 4:
+					t.calcularGanancias();
+					break;
+				case 5:
+					break;
 			}
 		}while(opcion !=0);
 	}
