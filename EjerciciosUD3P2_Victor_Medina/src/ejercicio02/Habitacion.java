@@ -1,7 +1,7 @@
 package ejercicio02;
 
 public class Habitacion {
-	private String tipo;
+	private int tipo;
 	private double precio;
 	private String nombreCliente;
 	private int numeroDias;
@@ -9,7 +9,7 @@ public class Habitacion {
 	private boolean minibar;
 	private boolean serviciosExtras;
 	
-	public Habitacion(String tipo, double precio, String nombreCliente, int numeroDias, boolean ocupada, boolean minibar,
+	public Habitacion(int tipo, double precio, String nombreCliente, int numeroDias, boolean ocupada, boolean minibar,
 			boolean serviciosExtras) {
 		this.tipo = tipo;
 		this.precio = precio;
@@ -22,10 +22,10 @@ public class Habitacion {
 	public Habitacion() {
 		
 	}
-	public String getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
-	public void setTipo(String tipo) {
+	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
 	public double getPrecio() {
@@ -80,5 +80,22 @@ public class Habitacion {
 		return "Habitacion [tipo=" + tipo + ", precio=" + precio + ", nombreCliente=" + nombreCliente + ", numeroDias="
 				+ numeroDias + ", ocupada=" + ocupada + ", minibar=" + minibar + ", serviciosExtras=" + serviciosExtras
 				+ "]";
+	}
+	public double calcularPrecioHabitacion(int tipo, double porcentajeHabitacion) {
+		int uno = 1, dos = 2, tres = 3, cuatro = 4;
+		double precioTotal = 0;
+		if(tipo == uno) {
+			precioTotal = precio*porcentajeHabitacion;
+		}
+		if(tipo == dos) {
+			precioTotal = precio*porcentajeHabitacion;
+		}
+		if(tipo == tres) {
+			precioTotal = precio*porcentajeHabitacion;
+		}
+		if(tipo == cuatro) {
+			precioTotal = precio*porcentajeHabitacion;
+		}
+		return precioTotal;
 	}
 }
