@@ -89,6 +89,9 @@ public class Principal {
 					ho.mostrarOcupacion(ho.findByNombreCliente(nombreCliente));
 					break;
 				case 3:
+					ho.calcularPrecioFinal(ha);
+					System.out.printf("Lo que tiene que pagar el cliente es: %.2f",ho.calcularPrecioFinal(ha));
+					ocupada = false;
 					break;
 				case 4:
 					break;

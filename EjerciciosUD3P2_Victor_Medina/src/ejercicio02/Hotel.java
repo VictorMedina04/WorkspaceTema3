@@ -75,16 +75,33 @@ public class Hotel {
 		}
 	}
 	public double calcularServiciosExtras(Habitacion ha) {
-		double
-		precioServicios = 
+		int quince = 15, cien = 100;
+		double precioServicios;
+		if(ha.isServiciosExtras()) {
+			precioServicios = ha.getPrecio()+(ha.getPrecio()* quince )/ cien;
+		}
+		else {
+			precioServicios =0;
+		}
+		return precioServicios;
 	}
-		
-	
-	
+	public double calcularMiniBar(Habitacion ha) {
+		int quince = 15, cien = 100;
+		double precioMiniBar;
+		if(ha.isMinibar()) {
+			precioMiniBar = ha.getPrecio()+(ha.getPrecio()* quince )/ cien;
+		}
+		else {
+			precioMiniBar =0;
+		}
+		return precioMiniBar;
+	}
 	
 	//Calcular precio final según número de días, servicios extra contratados y consumo del minibar.
-	public void calcularPrecioFinal(Habitacion ha) {
-		precioFinal = (ha.setPrecio());
+	public double calcularPrecioFinal(Habitacion ha) {
+		double precioFinal;
+		precioFinal = (ha.getPrecio()+ calcularMiniBar(ha)+ calcularServiciosExtras(ha)* ha.getNumeroDias());
+		return precioFinal;
 	}
 	
 }
