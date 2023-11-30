@@ -89,6 +89,10 @@ public class Principal {
 					ho.comprobarOcupacion(ha);
 					ho.mostrarOcupacion(ha);
 					break;
+				case 3:
+					break;
+				case 4:
+					break;
 			}
 		}while(opcion != 0);
 		
