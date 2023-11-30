@@ -1,5 +1,7 @@
 package ejercicio02;
 
+import java.util.Arrays;
+
 public class Hotel {
 	
 	private Habitacion []lista;
@@ -25,6 +27,12 @@ public class Hotel {
 	public void setNumHabitacion(int numHabitacion) {
 		this.numHabitacion = numHabitacion;
 	}
+	
+	@Override
+	public String toString() {
+		return "Hotel [lista=" + Arrays.toString(lista) + ", numHabitacion=" + numHabitacion + "]";
+	}
+
 	//AÑadir
 	public void addHabitacion(Habitacion ha) {
 		lista[numHabitacion] = ha;
@@ -43,36 +51,40 @@ public class Hotel {
 				i++;
 		}
 		if (encontrado)
-			return lista[i];//Devolvemos el producto buscado
+			return lista[i];
 		else
 			return null;
 	}
-
+	
+	
 	public boolean comprobarOcupacion(Habitacion ha) {
+		boolean result;
 		if(ha.isOcupada()) {
-			return true;
+			result = true;
 		}else {
-			return false;
+			result = false;
 		}
+		return result;
 	}
 	public void mostrarOcupacion(Habitacion ha) {
-		/*for (int i = 0; i < lista.length; i++) {
-			if(comprobarOcupacion(ha)) {
-				System.out.println("La habitación "+(i+1)+" esta ocupada");
-			}else {
-				System.out.println("La habitación "+(i+1)+" no esta ocupada");
-			}
-		}*/
+		
 		if(comprobarOcupacion(ha)) {
 			System.out.println("La habitación esta ocupada");
 		}else {
 			System.out.println("La habitación no esta ocupada");
 		}
 	}
-
+	public double calcularServiciosExtras(Habitacion ha) {
+		double
+		precioServicios = 
+	}
+		
+	
+	
+	
 	//Calcular precio final según número de días, servicios extra contratados y consumo del minibar.
 	public void calcularPrecioFinal(Habitacion ha) {
-		
+		precioFinal = (ha.setPrecio());
 	}
 	
 }

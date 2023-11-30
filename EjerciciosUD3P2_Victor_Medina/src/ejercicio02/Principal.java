@@ -85,9 +85,8 @@ public class Principal {
 					break;
 				case 2:
 					System.out.println("Introduzca el nombre del cliente");
-					ho.findByNombreCliente(nombreCliente);
-					ho.comprobarOcupacion(ha);
-					ho.mostrarOcupacion(ha);
+					nombreCliente = Leer.dato();
+					ho.mostrarOcupacion(ho.findByNombreCliente(nombreCliente));
 					break;
 				case 3:
 					break;
