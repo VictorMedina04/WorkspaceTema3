@@ -1,5 +1,7 @@
 package ejercicio03;
 
+import java.util.Iterator;
+
 public class Vendedor {
 	/*En la clase Vendedor
 	tendremos como características un array de Móviles y total vendido (se pueden añadir más atributos si se
@@ -16,8 +18,43 @@ public class Vendedor {
 		lista[numMovil] = mo;
 		numMovil ++;
 	}
-	public void findbyId() {
+	public Movil buscarId(int id) {
 		int i = 0;
 		boolean encontrado = false;
+		
+		while(i<lista.length && !encontrado) {
+			if(lista[i].getId() == id) {
+				encontrado = true;
+			}
+			else {
+				i++;
+			}
+		}
+			if(encontrado) {
+				return lista[i];
+			}
+			else
+				return null;
+	}
+	
+	public int contar(Movil mo) {
+		int contador = 0;
+		for (int i = 0; i < lista.length; i++) {
+			if(lista[i].isVendido()) {
+				
+			}
+			else {
+				contador++;
+			}
+		}
+		return contador;
+	}
+	
+	public void borrarmovil(Movil mo, int id) {
+		int index = buscarId(id);
+		if(mo.isVendido()) {
+			
+		}
+		
 	}
 }
