@@ -1,12 +1,12 @@
 package repaso;
 
 public class Producto {
-	
+
 	private String nombre;
 	private double precioFabrica;
 	private int seccion;
 	private boolean enVenta;
-	
+
 	public Producto(String nombre, double precioFabrica, int seccion, boolean enVenta) {
 		this.nombre = nombre;
 		this.precioFabrica = precioFabrica;
@@ -45,6 +45,10 @@ public class Producto {
 	public void setEnVenta(boolean enVenta) {
 		this.enVenta = enVenta;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Producto [nombre=" + nombre + ", precioFabrica=" + precioFabrica + ", seccion=" + seccion + ", enVenta="
+				+ enVenta + "]";
+	}
 }
