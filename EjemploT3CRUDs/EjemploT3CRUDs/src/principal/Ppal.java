@@ -8,7 +8,6 @@ import utilidades.Leer;
 public class Ppal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		String nombre, codigo;
 		double precioU, precioNuevo;
@@ -71,20 +70,19 @@ public class Ppal {
 
 				crud.imprimirSoloActivos();
 				break;
-				
+
 			case 6:
 				System.out.println("Diga cuántos productos lleva");
-				cantidad=Leer.datoInt();
+				cantidad = Leer.datoInt();
 				System.out.println("Diga descuento");
-				descuento=Leer.datoDouble();
+				descuento = Leer.datoDouble();
 				System.out.println("Diga con cuántos productos se aplicará el descuento");
-				tope=Leer.datoInt();
+				tope = Leer.datoInt();
 				System.out.println("De qué producto quiere saber el precio");
 				crud.imprimirTodosLosProductos();
-				op=Leer.datoInt()-1;
-				gp=new GestionProductos(listaCrud[op]);
-				System.out.printf("El precio es: %.2f euros",gp.calcularConDescuento(descuento, cantidad, tope));
-				
+				op = Leer.datoInt() - 1;
+				gp = new GestionProductos(listaCrud[op]);
+				System.out.printf("El precio es: %.2f euros", gp.calcularConDescuento(descuento, cantidad, tope));
 
 			}
 
