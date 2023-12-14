@@ -53,11 +53,24 @@ public class Tienda {
 		listado[numProductos++] = producto;
 	}
 
-	public void mostrarSinNulos() {
-		for (int i = 0; i < listado.length; i++) {
-			if (listado[i] != null) {
-				System.out.println(listado[i]);
-			}
+	public void mostrarListaSinNulos() {
+		for (int i = 0; i < numProductos; i++) {
+			System.out.println(listado[i]);
 		}
 	}
+
+	// MODIFICAR,ELIMINAR,AÑADIR,BUSCAR
+	public void buscar() {
+		int i = 0;
+		boolean encontrado = false;
+
+		while (i < listado.length && !encontrado) {
+
+		}
+	}
+
+	public void modificar() {
+
+	}
+
 }

@@ -22,6 +22,10 @@ public class Principal {
 
 		tienda = new Tienda(listado, numProductos, numTrabajadores);
 
+		Producto producto2 = new Producto("Pantalon", 2.5, 1, true);
+		Producto producto3 = new Producto("Lechuga", 5.7, 2, false);
+		Producto producto4 = new Producto("Cebolla", 2.4, 2, true);
+
 		do {
 			System.out.println("Gestion de productos");
 			System.out.println("1-Agregar producto");
@@ -50,7 +54,7 @@ public class Principal {
 				tienda.add(producto);
 				break;
 			case 2:
-				tienda.mostrarSinNulos();
+				tienda.mostrarListaSinNulos();
 				break;
 
 			case 0:
