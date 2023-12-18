@@ -53,24 +53,107 @@ public class Tienda {
 		listado[numProductos++] = producto;
 	}
 
-	public void mostrarListaSinNulos() {
-		for (int i = 0; i < numProductos; i++) {
-			System.out.println(listado[i]);
+	// Mostrar cualquier array
+	public void mostrarArray(Producto[] lista) {
+		for (int i = 0; i < lista.length; i++) {
+			if (lista[i] != null) {
+				System.out.println(lista[i]);
+			}
 		}
 	}
 
-	// MODIFICAR,ELIMINAR,AÑADIR,BUSCAR
-	public void buscar() {
+	// Buscar id
+	public int buscarID(int id) {
 		int i = 0;
 		boolean encontrado = false;
+		while (i < numProductos && !encontrado) {
+			if (listado[i].getId() == (id))
+				encontrado = true;
+			else
+				i++;
+		}
+		if (encontrado)
+			return i;
+		else
+			return -1;
+	}
 
-		while (i < listado.length && !encontrado) {
+	// Buscar id vs2
+	public Producto buscarIDV2(int id) {
+		int i = 0;
+		boolean encontrado = false;
+		while (i < numProductos && !encontrado) {
+			if (listado[i].getId() == (id))
+				encontrado = true;
+			else
+				i++;
+		}
+		if (encontrado)
+			return listado[i];
+		else
+			return null;
+	}
 
+	// Buscar por seccion
+	public Producto[] buscarBySeccion(int seccion) {
+		int i = 0;
+
+		Producto[] listaEncontrados = new Producto[numProductos];
+		while (i < numProductos) {
+
+			if (listado[i].getSeccion() == seccion) {
+				listaEncontrados[i] = listado[i];
+			}
+			i++;
+		}
+		return listaEncontrados;
+	}
+
+	public double calcularPrecioFinal(double ganancia, int id) {
+		Producto producto;
+		producto = buscarIDV2(id);
+		double cien = 100;
+
+		return producto.getPrecioFabrica() + producto.getPrecioFabrica() * ganancia / cien;
+	}
+
+	// Modificar
+	public void modificarPrecioPorSeccion(int seccion, double nuevoPrecio) {
+
+		for (int i = 0; i < numProductos; i++) {
+			if (listado[i].getSeccion() == seccion) {
+				listado[i].setPrecioFabrica(nuevoPrecio);
+			}
 		}
 	}
 
-	public void modificar() {
+	public double hacerDescuento(double descuento, double ganancias, int id) {
 
+		double cien = 100;
+		double resultado;
+
+		resultado = calcularPrecioFinal(ganancias, id) - calcularPrecioFinal(ganancias, id) * descuento / cien;
+
+		return resultado;
 	}
 
+	// Eliminar, devuelve el número de elementos eliminados de la lista
+	public int eliminarUnaSeccion(int seccion) {
+		int eliminados = 0;
+		for (int i = 0; i < numProductos; i++) {
+			if (listado[i].getSeccion() == seccion) {
+				listado[i].setEnVenta(false);
+				eliminados++;
+			}
+		}
+		return eliminados;
+	}
+
+	public void mostrarActivos() {
+		for (int i = 0; i < numProductos; i++) {
+			if (listado[i].isEnVenta()) {
+				System.out.println(listado[i]);
+			}
+		}
+	}
 }
