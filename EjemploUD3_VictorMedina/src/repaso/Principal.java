@@ -6,7 +6,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		int opcion, tam;
+		int opcion, tamanyo = 20;
 		String nombre;
 		int seccion, lecturaVenta, numProductos = 0, numTrabajadores = 0, id;
 		double precioFabrica, ganancias, nuevoPrecio, descuento;
@@ -14,20 +14,9 @@ public class Principal {
 		Producto producto;
 		Producto[] listado;
 		Tienda tienda;
-
-		System.out.println("Cuantos productos caben en su tienda");
-		tam = Leer.datoInt();
-
-		listado = new Producto[tam];
-
+		listado = new Producto[tamanyo];
 		tienda = new Tienda(listado, numProductos, numTrabajadores);
-
-		Producto producto2 = new Producto("Pantalon", 2.5, 1, true, 1);
-		Producto producto3 = new Producto("Lechuga", 5.7, 2, false, 2);
-		Producto producto4 = new Producto("Cebolla", 2.4, 2, true, 3);
-		tienda.add(producto2);
-		tienda.add(producto3);
-		tienda.add(producto4);
+		
 
 		do {
 			System.out.println("");

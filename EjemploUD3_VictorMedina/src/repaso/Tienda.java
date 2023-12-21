@@ -43,17 +43,14 @@ public class Tienda {
 		return "Tienda [listado=" + Arrays.toString(listado) + ", numProductos=" + numProductos + ", numTrabajadores="
 				+ numTrabajadores + "]";
 	}
-
-	// VERBO EN INFINITIVO, SIN Ñ NI TILDES, QUE INDIQUE QUE HACE EL METODO, LA
-	// SEGUNDA PALABRA EN MAYUSCULA Y LA PRIMERA EN MINUSCULA, SIEMPREE
-	// ENSERIO SIEMPRE, QUERIDO GUAPO PERFECTO Y MARAVILLOSO YO DEL FUTURO
-	// SIEMPREEEEEE
+	
+	
 	public void add(Producto producto) {
 
 		listado[numProductos++] = producto;
 	}
 
-	// Mostrar cualquier array
+	
 	public void mostrarArray(Producto[] lista) {
 		for (int i = 0; i < lista.length; i++) {
 			if (lista[i] != null) {
@@ -62,7 +59,14 @@ public class Tienda {
 		}
 	}
 
-	// Buscar id
+	public void mostrarActivos() {
+		for (int i = 0; i < numProductos; i++) {
+			if (listado[i].isEnVenta()) {
+				System.out.println(listado[i]);
+			}
+		}
+	}
+	
 	public int buscarID(int id) {
 		int i = 0;
 		boolean encontrado = false;
@@ -78,7 +82,7 @@ public class Tienda {
 			return -1;
 	}
 
-	// Buscar id vs2
+	
 	public Producto buscarIDV2(int id) {
 		int i = 0;
 		boolean encontrado = false;
@@ -94,7 +98,7 @@ public class Tienda {
 			return null;
 	}
 
-	// Buscar por seccion
+	
 	public Producto[] buscarBySeccion(int seccion) {
 		int i = 0;
 
@@ -117,7 +121,7 @@ public class Tienda {
 		return producto.getPrecioFabrica() + producto.getPrecioFabrica() * ganancia / cien;
 	}
 
-	// Modificar
+	
 	public void modificarPrecioPorSeccion(int seccion, double nuevoPrecio) {
 
 		for (int i = 0; i < numProductos; i++) {
@@ -137,7 +141,6 @@ public class Tienda {
 		return resultado;
 	}
 
-	// Eliminar, devuelve el número de elementos eliminados de la lista
 	public int eliminarUnaSeccion(int seccion) {
 		int eliminados = 0;
 		for (int i = 0; i < numProductos; i++) {
@@ -147,13 +150,5 @@ public class Tienda {
 			}
 		}
 		return eliminados;
-	}
-
-	public void mostrarActivos() {
-		for (int i = 0; i < numProductos; i++) {
-			if (listado[i].isEnVenta()) {
-				System.out.println(listado[i]);
-			}
-		}
 	}
 }
