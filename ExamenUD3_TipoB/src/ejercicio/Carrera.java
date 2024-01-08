@@ -63,4 +63,27 @@ public class Carrera {
 		return listaVeteranos;
 	}
 
+	public void modificarTiempo(int dorsal, double nuevoTiempo) {
+		Corredor corredor = buscarDorsal(dorsal);
+
+		corredor.setTiempoCorredor(nuevoTiempo);
+	}
+
+	public double calcularMediaTiempo(int dorsal) {
+		double mediaTiempo;
+		Corredor corredor = buscarDorsal(dorsal);
+
+		return mediaTiempo = corredor.getTiempoCorredor() / kilometros;
+	}
+
+	public double calcularTiempoJuveniles() {
+		double mediaTiempo = 0;
+		for (int i = 0; i < numeroCorredores; i++) {
+			if (corredores[i].getCategoria() == 1) {
+				mediaTiempo += corredores[i].getTiempoCorredor();
+			}
+		}
+		return mediaTiempo;
+	}
+
 }
